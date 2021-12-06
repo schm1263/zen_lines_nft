@@ -1,0 +1,67 @@
+pragma solidity >=0.70 <0.90;
+
+contract Basic_Auction{
+    // Parameters of Basic_Auction (static)
+    address payable public beneficiary;
+    uint public auctionEndTime;
+
+    //Current State of AuctionEndTime (fluid)
+    address public highestbidder;
+    uint public highestBid;
+
+    mapping(address => uint) public pendingReturns;
+
+    bool ended = false;
+
+    event HighestBidIncrease(address bidder, uint amount);
+    event AuctionEnded(address winner, uint amount);
+    
+    constructor(uint _biddingTIme, address payable _beneficiary){
+        beneficiary = beneficiary;
+        auctionEndTime = block.timestamp + _biddingTime;
+    }
+
+    function bid() public payable{
+        if (block.timestamp > auctionEndTime){
+            revert("The auction has ended");
+        }
+
+        if (msg.value <= highestBid){
+            revert("There is a higher or equal bid");
+        }
+
+        if (highestBid != 0){
+            
+        }
+        highestBidder = msg.sender;
+        highestBid = msg.value;
+        emit HighestBidIncrease(msg.sender, msg.value);
+    }
+
+    function withdraw() public returns(bool){
+        uint amount = pendingReturns[msg.sender];
+        if(amount > 0){
+            pendingReturns[msg.sender] = 0;
+
+            if(!payable(msg.sender).send(amount)){
+                pendingReturns[msg.sender] = amount;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function auctionEnd() public {
+        if (block.timestamp < auction EndTime){
+            revert ("THe auction is still going");
+        }
+
+        if (ended){
+            revert( "THe auction has been called");
+
+        }
+
+        ende = true;
+        emit AuctionEnded(highestBidder, highestBid);
+
+}    
