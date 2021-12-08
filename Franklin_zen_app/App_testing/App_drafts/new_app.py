@@ -38,23 +38,23 @@ contract = load_contract()
 st.markdown("## ZEN LINES MUSIC AND IMAGE NFT")
 
 
-st.title("Music and Image Registry Appraisal System")
+st.title("Art Registry Appraisal System")
 st.write("Choose an account to get started")
 accounts = w3.eth.accounts
 address = st.selectbox("Select Account", options=accounts)
 st.markdown("---")
 
 ################################################################################
-# Register New Musical Creation
+# Register New Artwork
 ################################################################################
-st.markdown("## Register Music and Image NFT")
+st.markdown("## Register New Artwork")
 
-name = st.text_input("Enter the name of the musical creation")
+name = st.text_input("Enter the name of the artwork")
 artist = st.text_input("Enter the artist name")
 initialValue = st.text_input("Enter the initial appraisal amount")
-tokenURI = st.text_input("Enter the URI to the musical creation")
+tokenURI = st.text_input("Enter the URI to the artwork")
 
-if st.button("Register Musical Creation"):
+if st.button("Register Artwork"):
     tx_hash = contract.functions.artworkRegistration(
         address,
         name,
@@ -69,14 +69,14 @@ st.markdown("---")
 
 
 ################################################################################
-# Appraise Musical Creation
+# Appraise Art
 ################################################################################
-st.markdown("## Appraise Musical Creation")
+st.markdown("## Appraise Artwork")
 tokens = contract.functions.totalSupply().call()
-tokenId = st.selectbox("Choose a Token ID", list(range(tokens)))
+tokenId = st.selectbox("Choose an Art Token ID", list(range(tokens)))
 newValue = st.text_input("Enter the new appraisal amount")
 reportURI = st.text_area("Enter notes about the appraisal")
-if st.button("Appraise Musical Creation"):
+if st.button("Appraise Artwork"):
 
     # Use the tokenId and the reportURI to record the appraisal
     tx_hash = contract.functions.newArtwork(
