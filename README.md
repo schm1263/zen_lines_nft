@@ -9,6 +9,6 @@ https://user-images.githubusercontent.com/85138335/145272947-fd33a3bf-6dec-484d-
 
 ### I then created a gallery meant to hold the NFT as well as any future NFT.
 
-### Once combined with the other smart contracts we now had a fucntioning streamlit app connected to a gallery smart contract.
+### Once combined with the other smart contracts as well as the web application code we now had a functioning streamlit app connected to a smart contract that serves as a gallery.
 
 ### In short it allows for a user to input a wallet address and a token URI to store the artwork in the gallery and even get appraisal information.
