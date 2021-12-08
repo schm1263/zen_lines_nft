@@ -16,7 +16,7 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 # Load_contract function defined
 def load_contract():
     # Load ABI
-    with open(Path('./contracts/compiled/gallery_abi.json')) as f:     # ABI JSON file for the Zen_Lines contract
+    with open(Path('./contracts/compiled/gallery_abi.json')) as f:     # ABI JSON file for the Zen_Lines Gallery contract
         gallery_abi = json.load(f)
     
     # Setting the Smart Contract Address
@@ -38,7 +38,7 @@ contract = load_contract()
 st.markdown("## ZEN LINES MUSIC AND IMAGE NFT")
 
 
-st.title("Music and Image Registry Appraisal System")
+st.title("Music and Image Registry in our Gallery and Appraisal System")
 st.write("Choose an account to get started")
 accounts = w3.eth.accounts
 address = st.selectbox("Select Account", options=accounts)
@@ -47,7 +47,7 @@ st.markdown("---")
 ################################################################################
 # Register New Musical Creation
 ################################################################################
-st.markdown("## Register Music and Image NFT")
+st.markdown("## Register Music and Image NFT in our Gallery")
 
 name = st.text_input("Enter the name of the musical creation")
 artist = st.text_input("Enter the artist name")

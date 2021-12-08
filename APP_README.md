@@ -6,11 +6,54 @@
 ### Streamlit App integration by Franklin Vaca 
 #
 
+## **App creation:**
+<p>Two apps were created for this project:</p>
+<p>- nft_app.py  - This app creates the TokenID of the music and image creation.</p>
+<p>- app.py  - This app allows to register our musical piece and image to be stored in a Gallery. It also has the functionality to record and modify appraisals for the musc and image piece.</p>
 
-<p>The NFT solidity contract was created by Zack and deployed in the Rinkeby test network.</p>
+____________
+
+
+# **Music and Image NFT**
+## **TokenID creation app - nft_app.py:**
+
+**Zen Lines NFT contract:**
+<p>The nft_app solidity contract was created by Zack and deployed using Ganache test network.</p>
 <p></p>
 
-## **Gallery contract:**
+*Zen Lines Token contract reviewed and succesfully compiled* 
+
+![image](Images/Nft_app_0_0_Contract_deployed.PNG)
+<p></p><br>
+
+
+*Zen Lines Token contract deployment gas fees*
+
+![image](Images/Nft_app_0_0_Contract_deployed_gas_fees.PNG)
+<p></p><br>
+
+
+*App created using Streamlit* 
+
+![image](Images/Nft_app_0_TokenID.PNG)
+<p></p><br>
+
+
+*TokenID created and receipt of the transaction sent to the blockchain.* 
+
+![image](Images/Nft_app_1_TokenID.PNG)
+<p></p><br>
+
+*Gas fees incurred due to the TokenId creation.*
+
+![image](Images/Nft_app_2_TokenID_ganache.PNG)
+<p></p><br>
+
+
+## **Gallery registration and appraisal app - app.py:**
+
+**Gallery contract:**
+
 The contract was created using Solidity, compiled and deployed using REMIX IDE, Metamask and Ganache.
 
 
